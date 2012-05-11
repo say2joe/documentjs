@@ -9,7 +9,7 @@ steal(	'steal/generate/ejs.js',
 		'documentjs/json.js', 
 		'documentjs/showdown.js')
 	.then('steal/build')
-.then( function( $ ) {
+.then( function( $ ) { 
 	
 	//if we already have DocumentJS, don't create another, this is so we can document documentjs
 	if(typeof DocumentJS != 'undefined'){
