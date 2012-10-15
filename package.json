@@ -15,7 +15,8 @@
 	},
   "dependencies" : {
     "showdown" : ">= 0.2.0",
-    "underscore" : ">= 1.4.0"
+    "underscore" : ">= 1.4.0",
+    "walk" : ">= 2.2.1"
   },
 	"homepage": "http://javascriptmvc.com",
 	"repository": {
