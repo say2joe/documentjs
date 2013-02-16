@@ -16,10 +16,11 @@
   "dependencies": {
     "showdown": ">= 0.2.0",
     "underscore": ">= 1.4.0",
-    "walk": ">= 2.2.1",
     "winston": ">= 0.6.2",
     "async": ">= 0.2.5",
-    "ejs": "~0.8.0"
+    "ejs": "~0.8.0",
+    "wrench": ">= 1.4.4",
+    "commander": ">= 1.1.1"
   },
   "bin": {
     "testee": "./bin/documentjs"

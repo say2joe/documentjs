@@ -1,8 +1,8 @@
 /*
- * @page index CRM
+ * @page index The Stuff
  * @tag home
  *
- * ###Little CRM
+ * ### Little CRM
  *
  * Our little CRM
  */

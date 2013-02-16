@@ -1,20 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>
 			JavaScriptMVC
 		</title>
-		<link rel="shortcut icon" href="<%= pathToRoot %>/documentjs/jmvcdoc/images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="production.css" />
 	</head>
 	<body>
-		<div id='documentation'>
-			<div id='top'>
+		<div id="documentation">
+			<div id="top">
 				<div class="content">
 					<div id="searchRoundCorners">
-						<input id='search' type='input' disabled='true'>
+						<input id="search" type="input" disabled="true">
 					</div>
-					<div id='defaults'>
+					<div id="defaults">
 						<ul id="menu" class="ui-menu">
 							<li class="ui-menu-item">
 								<a class="menuLink" href="#!"><span class="menuSpan">Home</span></a>
@@ -23,24 +23,31 @@
 					</div>
 				</div>
 			</div>
-			<div id='bottom'>
-				<div id='nav'>
+			<div id="bottom">
+				<div id="nav">
 					<a>Loading ...</a>
 				</div>
-				<div id='doc_container'>
-					<div id='doc'>
-						<%= this.indexPage ? this.indexPage.comment : "Add a page named 'index' to see something here." %>
+				<div id="doc_container">
+					<div id="doc">
+						<%= this.indexPage ? this.indexPage.comment : "Add a page named index to see something here." %>
 					</div>
 					<div id="disqus_thread"></div>
 				</div>
 			</div>
 		</div>
-		<div id='low'>
+		<div id="low">
 			<a href="http://bitovi.com" target="_blank">Generated with DocumentJS by Bitovi</a>
 		</div>
-		<script type='text/javascript'>
-			DOCS_LOCATION = "docs/" //adds searchData to this
-		</script>
-		<script type='text/javascript' src='jmvcdoc/steal/steal.production.js?documentjs/jmvcdoc'></script>
+		<script type="text/javascript">
+      (function(){
+			  window.DOCS_LOCATION = "json/"; //adds searchData to this
+        window.steal = {
+          production: "production.js",
+          executed: ["production.css"]
+        };
+      })()
+    </script>
+    <script type="text/javascript" src="steal.production.js?/"></script>
+    <script type="text/javascript" src="production.js"></script>
 	</body>
 </html>
