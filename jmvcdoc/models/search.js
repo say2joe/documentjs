@@ -1,4 +1,4 @@
-steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favorites.js',function(){
+steal('can/construct', 'can/util/json.js').then('./favorites.js',function(){
 
 	var data,
 		// a map of names to deferreds
@@ -12,8 +12,6 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 			}
 		}
 	});
-	
-	
 	
 	can.Construct("Doc",{
 		location : null,
@@ -86,12 +84,10 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 				},1000)
 				
 			}
-			
 			return arguments;
 		},
 		findOne: function(params, success, error){
 			if(success){
-
 				if(window.localStorage && window.JMVCDOC_TIMESTAMP){
 					var json = window.localStorage["jmvcDoc"+params.name]
 					if(json){
@@ -101,7 +97,6 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 							return;
 						}
 					}
-
 				}
 				var def = findOneDeferreds[params.name]
 				// check if we are already requesting
@@ -111,7 +106,6 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 					return def;
 				} else {
 					def = findOneDeferreds[params.name] = can.Deferred();
-					def.done(success);
 					def.fail(error);
 					def.done(function(data){
 						if(window.localStorage && window.JMVCDOC_TIMESTAMP){
@@ -120,12 +114,19 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 								window.localStorage["jmvcDoc"+params.name] = can.toJSON(data)
 								delete findOneDeferreds[params.name];
 							},10)
-							
 						}
+						success(data)
 					});
 					can.ajax({
-						url: ( this.location || DOCS_LOCATION) + params.name.replace(/ /g, "_")
-							.replace(/&#46;/g, ".") + ".json",
+						url: ( this.location || DOCS_LOCATION) + 
+							params.name
+										.replace(/ /g, "_")
+										.replace(/&#46;/g, ".")
+										.replace(/&gt;/g, "_gt_")
+										.replace(/\*/g, "_star_")
+										.replace(/\//g,"|") + 
+									
+									".json",
 						error: function(){
 							def.reject.apply(def, arguments)
 						},
@@ -157,7 +158,7 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 		 * @param {Object} params
 		 */
 		findAll: function(params){
-			var valWasEmpty, level = 2;
+			var valWasEmpty, level = 0;
 			var val = params.search.toLowerCase();
 	
 			if (!val || val === "*" ) {
@@ -178,7 +179,12 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 			}
 			
 			var list = [];
-			if ( current && val.length > level ) {
+			for(var name in current){
+				if (this.matches(current[name], val, valWasEmpty)) {
+					list.push(current[name])
+				}
+			}
+			/*if ( current && val.length > level ) {
 				//make sure everything in current is ok
 				var lookedup = this.lookup(current.list);
 				for ( var i = 0; i < lookedup.length; i++ ) {
@@ -188,7 +194,7 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 				}
 			} else if ( current ) {
 				list = this.lookup(current.list);
-			}
+			}*/
 			return list.sort(Search.sortFn);
 		},
 		searchData : function(){
@@ -199,7 +205,7 @@ steal('can/util/exports.js', 'can/construct', 'can/util/json.js').then('./favori
 			}
 			
 			if(window.localStorage && window.JMVCDOC_TIMESTAMP){
-				var json = window.localStorage["jmvcDocSearch"+window.JMVCDOC_TIMESTAMP]
+				var json = window.localStorage["jmvcDoc"+window.JMVCDOC_TIMESTAMP]
 				if(json){
 					return this._searchData = can.parseJSON(json);
 				}
