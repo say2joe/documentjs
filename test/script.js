@@ -25,7 +25,7 @@ describe('DocumentJS Script', function() {
 		});
 	});
 
-	it('Processes a file', function(done) {
+	it.skip('Processes a file', function(done) {
 		Script.process(fixture, {}, function(error, objects) {
 			expect(objects).to.have.property(fixture);
 			expect(objects).to.have.property('index');

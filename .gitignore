@@ -4,3 +4,4 @@ production.js
 *.orig
 idea
 *node_modules*
+tmp*

@@ -1,32 +1,38 @@
 {
-	"name": "DocumentJS",
-	"description": "A JavaScript documentation engine",
-	"version": "4.0.0",
-	"maintainers": [
-		{
-			"name": "Bitovi",
-			"email": "contact@bitovi.com",
-			"web": "http://bitovi.com/"
-		}
-	],
-	"devDependencies": {
-		"mocha" : ">= 1.6.0",
-    "expect.js" : ">= 0.1.2"
-	},
-  "dependencies" : {
-    "showdown" : ">= 0.2.0",
-    "underscore" : ">= 1.4.0",
-    "walk" : ">= 2.2.1"
+  "name": "DocumentJS",
+  "description": "A JavaScript documentation engine",
+  "version": "4.0.0",
+  "maintainers": [
+    {
+      "name": "Bitovi",
+      "email": "contact@bitovi.com",
+      "web": "http://bitovi.com/"
+    }
+  ],
+  "devDependencies": {
+    "mocha": ">= 1.6.0",
+    "expect.js": ">= 0.1.2"
   },
-	"homepage": "http://javascriptmvc.com",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/jupiterjs/documentjs.git"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://opensource.org/licenses/mit-license.php"
-		}
-	]
+  "dependencies": {
+    "showdown": ">= 0.2.0",
+    "underscore": ">= 1.4.0",
+    "walk": ">= 2.2.1",
+    "winston": ">= 0.6.2",
+    "async": ">= 0.2.5",
+    "ejs": "~0.8.0"
+  },
+  "bin": {
+    "testee": "./bin/documentjs"
+  },
+  "homepage": "http://javascriptmvc.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bitovi/documentjs.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ]
 }

@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var program = require('commander');
+var testee = require('../lib/testee');
+var _ = require('underscore');
+var pkg = require('../package.json');
+var fs = require('fs');
+
+program.version(pkg.version)
+	.usage('[options] <files ...>')
+	.description(pkg.description)
+	.option('-o, --out [folder]', 'The output folder')
