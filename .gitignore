@@ -2,6 +2,11 @@ test/docs/*
 dist
 production.js
 *.orig
+<<<<<<< HEAD
 idea
 *node_modules*
 tmp*
+=======
+docs
+docs.html
+>>>>>>> closuresyntax

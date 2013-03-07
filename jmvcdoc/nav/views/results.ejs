@@ -41,9 +41,15 @@
 			   style="padding-left: <%= dis.padding %>"
 			   data-name="<%= current.name %>">
 		    		<%if(hasStaticOrPrototype) {%>
+<<<<<<< HEAD
 					<%= dis.right %>
 				<% } else  { %>
 					<span class='faded'><%= dis.left %></span><%=  dis.right %>
+=======
+					<%== dis.right %>
+				<% } else  { %>
+					<span class='faded'><%= dis.left %></span><%==  dis.right %>
+>>>>>>> closuresyntax
 				<% } %>
 			</a>
 			<% previous = dis.title %>
