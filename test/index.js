@@ -4,7 +4,7 @@ Mocha.interfaces["qunit-mocha-ui"] = require("qunit-mocha-ui");
 //Tell mocha to use the interface.
 var mocha = new Mocha({ui:"qunit-mocha-ui", reporter:"spec"});
 //Add your test files
-mocha.addFile(__dirname + "/tags_tests.js");
+mocha.addFile(__dirname + "/tags.js");
 //Run your tests
 mocha.run(function(failures){
 	process.exit(failures);
