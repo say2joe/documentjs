@@ -100,7 +100,7 @@ steal('documentjs/showdown.js','./helpers/typeNameDescription.js',
 			if ( last ) last.description += "\n" + line;
 		},
 		add: function( line ) {
-	
+			
 			var param = tnd(line);
 			if(!param.type && !param.name){
 				print("LINE: \n" + line + "\n does not match @param {TYPE} NAME DESCRIPTION");

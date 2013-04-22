@@ -174,7 +174,7 @@ steal('steal','../distance',function(s, distance){
 						lastData = curData = last.data;
 						lastType = curTag = last.type;
 					} else if (curData && curData.length == 2 && curData[0] == 'scope' ) {
-						curData = scope = curData[1]
+						props = scope = curData[1];
 					} else if ( curData && curData.length == 2 && curData[0] == 'default' ) {
 						// if we get ['default',PROPNAME]
 						// we change default write to prop name

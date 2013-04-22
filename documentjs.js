@@ -196,7 +196,7 @@ steal('steal',
 	 * Remember the @@tag directive? We can now change it in our examples from _core_ to _crm_. You will notice that our crm page will show up
 	 * every time you click the CRM menu item or type _crm_ in the documentation viewer search box.
 	 * 
-	 * If you need for DocumentJS not to document a particular script you can do that by adding the @document-ignore directive to the top of the file. 
+	 * If you need for DocumentJS not to document a particular script you can do that by adding the @documentjs-ignore directive to the top of the file. 
 	 * 
 	 * As you see DocumentJS makes it super easy and fun to organize your documentation!
 	 * 

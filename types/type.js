@@ -67,7 +67,7 @@ steal('steal','../distance','../showdown','documentjs/tags',function(s, distance
 			// you are not going to process the comment the typical way
 			// this is mostly for @add
 			if ( type.init ) {
-				return handler.apply(null, type.init(props, comment, objects) ) 
+				return handler.apply(null, type.init(firstLine, objects) ) 
 			}
 
 
