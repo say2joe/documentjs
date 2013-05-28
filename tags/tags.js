@@ -69,8 +69,8 @@ function(add, alias, author, body, codeend, codestart, constructor, demo, descri
 		typedef: typedef,
 		group: group
 	}
-	
-	/**
+
+	/*
 	 * @attribute DocumentJS.tags
 	 * @parent DocumentJS
 	 * A tag adds additional information to the comment being processed.
